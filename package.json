@@ -1,5 +1,5 @@
 {
-  "name": "what-anime-cli",
+  "name": "what-anime-cli-js",
   "version": "1.0.0",
   "description": "Idea was taken from irevenko/what-anime-cli. This is a project where you can find anime by image using this terminal",
   "main": "index.js",
@@ -10,11 +10,18 @@
     "type": "git",
     "url": "git+https://github.com/Norman20165/what-anime-cli-js.git"
   },
+  "bin": {
+    "wac": "src/index.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Norman20165/what-anime-cli-js/issues"
   },
-  "homepage": "https://github.com/Norman20165/what-anime-cli-js#readme"
+  "homepage": "https://github.com/Norman20165/what-anime-cli-js#readme",
+  "dependencies": {
+    "inquirer": "^8.2.6",
+    "yargs": "^17.7.2"
+  }
 }
