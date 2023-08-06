@@ -11,8 +11,9 @@
     "url": "git+https://github.com/Norman20165/what-anime-cli-js.git"
   },
   "bin": {
-    "wac": "src/index.js"
+    "wac": "main.js"
   },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
