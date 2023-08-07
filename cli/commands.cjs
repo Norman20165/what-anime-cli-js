@@ -3,41 +3,40 @@ const yargs = require('yargs');
 
 module.exports.commands = () => {
     function getData() {
-        inquirer.prompt([
-            {
-                type: 'list',
-                name: 'choice',
-                message: 'Hello! Select an image transfer method:',
-                choices: ['file', 'link'],
-            },
-            {
-                type: 'input',
-                name: 'path',
-                message: 'Print a path:',
-            },
-        ]).then((answers) => {
-            choice = answers.choice;
-            path = answers.path;
+        return new Promise(function(resolve, reject) {
+            inquirer.prompt([
+                {
+                    type: 'list',
+                    name: 'choice',
+                    message: 'Hello! Select an image transfer method:',
+                    choices: ['file', 'link'],
+                },
+                {
+                    type: 'input',
+                    name: 'path',
+                    message: 'Print a path:',
+                },
+            ]).then((answers) => resolve(answers));
         });
     };
     
-    data = yargs.argv;
-    choice = undefined
-    path = undefined
+    const data = yargs.argv;
 
     if (Object.keys(data).length == 2) {
         if (!data._.length) {
-            getData();
-            
-            console.log(choice);
-            console.log(path);
+            getData().then(
+                result => {
+                    return result;
+                }
+            );
         } else {
-            console.log(data);
+            return data;
         };
     } else {
-        getData();
-                    
-        console.log(choice);
-        console.log(path);
+        getData().then(
+            result => {
+                return result;
+            }
+        );
     };
 };
