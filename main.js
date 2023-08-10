@@ -2,4 +2,6 @@
 
 import { commands } from "./cli/commands.cjs";
 
-commands();
+(async () => {
+    console.log(await commands());
+})();

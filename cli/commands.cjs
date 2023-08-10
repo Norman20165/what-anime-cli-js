@@ -1,9 +1,52 @@
+// const inquirer = require('inquirer');
+// const yargs = require('yargs');
+
+// module.exports.commands = () => {
+//     function getData() {
+//         return new Promise(function(resolve, reject) {
+//             inquirer.prompt([
+//                 {
+//                     type: 'list',
+//                     name: 'choice',
+//                     message: 'Hello! Select an image transfer method:',
+//                     choices: ['file', 'link'],
+//                 },
+//                 {
+//                     type: 'input',
+//                     name: 'path',
+//                     message: 'Print a path:',
+//                 },
+//             ]).then((answers) => resolve(answers));
+//         });
+//     };
+    
+//     const data = yargs.argv;
+
+//     if (Object.keys(data).length == 2) {
+//         if (!data._.length) {
+//             getData().then(
+//                 result => {
+//                     return result;
+//                 }
+//             );
+//         } else {
+//             return data;
+//         };
+//     } else {
+//         getData().then(
+//             result => {
+//                 return result;
+//             }
+//         );
+//     };
+// };
+
 const inquirer = require('inquirer');
 const yargs = require('yargs');
 
-module.exports.commands = () => {
-    function getData() {
-        return new Promise(function(resolve, reject) {
+module.exports.commands = async () => {
+    async function getData() {
+        return await new Promise((resolve) => {
             inquirer.prompt([
                 {
                     type: 'list',
@@ -24,19 +67,11 @@ module.exports.commands = () => {
 
     if (Object.keys(data).length == 2) {
         if (!data._.length) {
-            getData().then(
-                result => {
-                    return result;
-                }
-            );
+            return await getData();
         } else {
             return data;
         };
     } else {
-        getData().then(
-            result => {
-                return result;
-            }
-        );
+        return await getData();
     };
 };
