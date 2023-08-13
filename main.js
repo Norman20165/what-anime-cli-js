@@ -4,6 +4,7 @@ import { commands } from "./cli/commands.cjs";
 import { checkData } from "./cli/check_data.cjs";
 import { fileSearch } from "./cli/file_search.cjs";
 import { linkSearch } from "./cli/link_search.cjs";
+import { outputData } from "./cli/output_data.cjs";
 
 (async () => {
     const data = await commands();
