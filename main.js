@@ -15,9 +15,12 @@ import { outputData } from "./cli/output_data.cjs";
         return;
     };
 
+    let newData = {};
     if (checked.choice == 'file') {
-        console.log(await fileSearch(checked.path));
+        newData = await fileSearch(checked.path);
     } else {
-        console.log(await linkSearch(checked.path));
+        newData = await linkSearch(checked.path);
     };
+
+    outputData(newData);
 })();
