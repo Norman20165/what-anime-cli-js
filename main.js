@@ -5,13 +5,14 @@ import { checkData } from "./cli/check_data.cjs";
 import { fileSearch } from "./cli/file_search.cjs";
 import { linkSearch } from "./cli/link_search.cjs";
 import { outputData } from "./cli/output_data.cjs";
+import { red } from "felt-pen";
 
 (async () => {
     const data = await commands();
     const checked = checkData(data);
 
     if (typeof checked == 'string') {
-        console.log(checked);
+        console.log(red(`❌${checked}`));
         return;
     };
 
@@ -22,5 +23,5 @@ import { outputData } from "./cli/output_data.cjs";
         newData = await linkSearch(checked.path);
     };
 
-    outputData(newData);
+    console.log(outputData(newData));
 })();
