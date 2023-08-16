@@ -4,14 +4,15 @@
   "description": "Idea was taken from irevenko/what-anime-cli. This is a project where you can find anime by image using this terminal",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.cjs"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Norman20165/what-anime-cli-js.git"
   },
   "bin": {
-    "wac": "main.js"
+    "what-anime": "main.js"
   },
   "type": "module",
   "keywords": [],
@@ -25,5 +26,9 @@
     "felt-pen": "^2.0.1",
     "inquirer": "^8.2.6",
     "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
   }
 }
