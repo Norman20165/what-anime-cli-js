@@ -26,8 +26,8 @@ what-anime link https://anime.com/image.png
 
 ## Contributing 🤝
 
-Contributions, issues and feature requests are welcome! 👍
-Feel free to check open issues.
+Contributions, issues and feature requests are welcome! 👍<br>
+Feel free to check [open issues](https://github.com/Norman20165/what-anime-cli-js/issues).
 
 ## What I Learned 🧠
 
