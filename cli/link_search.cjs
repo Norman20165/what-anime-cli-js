@@ -9,5 +9,3 @@ module.exports.linkSearch = async (link) => {
         return false;
     };
 };
-
-// https://images.plurk.com/32B15UXxymfSMwKGTObY5e.jpg
